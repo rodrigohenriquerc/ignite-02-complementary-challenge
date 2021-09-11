@@ -5,7 +5,7 @@ import { Form } from "./styles";
 import Modal from "../Modal";
 import Input from "../Input";
 
-function ModalAddFood({ isOpen, setIsOpen, handleAddFood }) {
+const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }) => {
   const formRef = createRef();
 
   const handleSubmit = async (data) => {
@@ -32,6 +32,6 @@ function ModalAddFood({ isOpen, setIsOpen, handleAddFood }) {
       </Form>
     </Modal>
   );
-}
+};
 
 export default ModalAddFood;

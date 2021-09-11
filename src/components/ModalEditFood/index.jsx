@@ -5,7 +5,7 @@ import { Form } from "./styles";
 import Modal from "../Modal";
 import Input from "../Input";
 
-function ModalEditFood({ isOpen, setIsOpen, handleUpdateFood, editingFood }) {
+const ModalEditFood = ({ isOpen, setIsOpen, handleUpdateFood, editingFood }) => {
   const formRef = createRef();
 
   const handleSubmit = async (data) => {

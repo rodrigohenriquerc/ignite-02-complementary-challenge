@@ -7,7 +7,7 @@ import ModalAddFood from "../../components/ModalAddFood";
 import ModalEditFood from "../../components/ModalEditFood";
 import { FoodsContainer } from "./styles";
 
-function Dashboard() {
+const Dashboard = () => {
   const [foods, setFoods] = useState([]);
   const [editingFood, setEditingFood] = useState({});
   const [modalOpen, setModalOpen] = useState(false);

@@ -4,7 +4,7 @@ import { FiEdit3, FiTrash } from "react-icons/fi";
 import { Container } from "./styles";
 import api from "../../services/api";
 
-function Food({ food, handleEditFood, handleDelete }) {
+const Food = ({ food, handleEditFood, handleDelete }) => {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
   const toggleAvailable = async () => {
@@ -70,6 +70,6 @@ function Food({ food, handleEditFood, handleDelete }) {
       </section>
     </Container>
   );
-}
+};
 
 export default Food;
