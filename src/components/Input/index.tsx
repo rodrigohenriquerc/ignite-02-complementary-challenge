@@ -6,10 +6,18 @@ import { Container } from "./styles";
 
 interface InputProps {
   name: string;
-  icon: React.FC<{ size: number }>;
+  icon?: React.FC<{ size: number }>;
 }
 
-const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
+const Input = ({
+  name,
+  icon: Icon,
+  ...rest
+}: InputProps &
+  React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
