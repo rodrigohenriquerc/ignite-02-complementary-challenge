@@ -6,23 +6,16 @@ import Food from "../../components/Food";
 import ModalAddFood from "../../components/ModalAddFood";
 import ModalEditFood from "../../components/ModalEditFood";
 import { FoodsContainer } from "./styles";
-
-interface FoodData {
-  id: number;
-  name: string;
-  description: string;
-  price: string;
-  available: boolean;
-  image: string;
-}
-
-type AddFoodData = Omit<FoodData, "id" | "available">;
-type EditFoodData = AddFoodData;
-type DeleteFoodData = FoodData["id"];
+import {
+  FoodData,
+  AddFoodData,
+  EditFoodData,
+  DeleteFoodData,
+} from "../../types";
 
 const Dashboard = () => {
   const [foods, setFoods] = useState<FoodData[]>([]);
-  const [editingFood, setEditingFood] = useState<FoodData>();
+  const [editingFood, setEditingFood] = useState<EditFoodData>();
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
@@ -80,7 +73,7 @@ const Dashboard = () => {
     setEditModalOpen(!editModalOpen);
   };
 
-  const handleEditFood = (food: FoodData) => {
+  const handleEditFood = (food: EditFoodData) => {
     setEditingFood(food);
     setEditModalOpen(true);
   };
@@ -106,8 +99,8 @@ const Dashboard = () => {
             <Food
               key={food.id}
               food={food}
-              handleDelete={handleDeleteFood}
               handleEditFood={handleEditFood}
+              handleDelete={handleDeleteFood}
             />
           ))}
       </FoodsContainer>
